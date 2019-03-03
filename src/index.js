@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
-import Users from './Users';
+import Users from './components/Users/Users';
 import './style.css';
 
 class App extends Component {
