@@ -28,35 +28,46 @@ class Users extends Component {
         }
 
         return (
-            <div>
+            <div >
 
                 <h1> Users {loading}</h1>
 
-                {this.state.data.map(users => (
-                    <div key={users.username}>
-                        <a id="name">
-                            <p>           {/* Displays the details of users */}
-                                Street &nbsp; <span style={{fontWeight: "500"}}>{users.address.street} </span><br/>
+                <div className="user-list-container">
 
-                                Suite &nbsp; <span style={{fontWeight: "500"}}>{users.address.suite} </span><br/>
+                    {this.state.data.map(users =>(
+                        <div key={users.username} style={{paddingTop: "2px", paddingBottom: "2px"}}>
 
-                                City &nbsp; <span style={{fontWeight: "500"}}>{users.address.city} </span><br/>
+                            <a className="list-of-user">
 
-                                Zipcode &nbsp; <span style={{fontWeight: "500"}}>{users.address.zipcode} </span><br/>
-                            </p>
+                                <span id="name-of-user">
+                                {users.name}
+                                </span>
 
-                            {users.name}      {/* Displays the name of users */}
+                                <p className="user-detail-wrapper">           {/* Displays the details of users */}
+                                    <p className="user-detail-info">
+                                        Street &nbsp; <span style={{fontWeight: "500"}}>{users.address.street} </span><br/>
 
-                        </a>
-                        <span id="username">  {/* Displays the username of users */}
-                            ({users.username})
-              </span>
+                                        Suite &nbsp; <span style={{fontWeight: "500"}}>{users.address.suite} </span><br/>
 
-                        <br/>
-                        <br/>
+                                        City &nbsp; <span style={{fontWeight: "500"}}>{users.address.city} </span><br/>
 
-                    </div>
-                ))}
+                                        Zipcode &nbsp; <span style={{fontWeight: "500"}}>{users.address.zipcode} </span><br/>
+                                    </p>
+                                </p>
+
+
+                            </a>
+
+
+                            <span id="username">  {/* Displays the username of users */}
+                                ({users.username})
+                        </span>
+
+                        </div>
+                    ))}
+
+
+                </div>
 
             </div>
         );

@@ -1,29 +1,62 @@
-#name{
-    text-align: left;
-    color: black;
-    font-weight: 800;
-    border-bottom: 1px dotted;
-}
-a#name:hover {
-    cursor: pointer;
-    position: relative;
-    background-color: lightgrey;
-}
-a#name p{
-    display: none
-}
-a#name:hover p {
-    border: black 1px solid;
-    padding: 5px 20px 5px 5px;
-    display: table;
-    position: absolute;
-    left: 110%;
-    top: -15px;
-    background: white ;
-}
 
 #username{
     float: right;
     color: grey;
     font-weight: 300;
+}
+
+#name-of-user{
+    font-weight: 800;
+    color: black;
+}
+
+.user-list-container {
+    overflow-y: scroll;
+    /*position: relative;*/
+    border: 3px solid black;
+    height: 190px;
+    padding: 5px;
+
+}
+.list-of-user {
+    /*position: relative;*/
+    text-align: left;
+    color: black;
+    border-bottom: 1px dotted;
+    display: inline;
+    z-index: 1;
+}
+.user-detail-wrapper {
+    position: absolute;
+    display: table;
+    visibility: hidden;
+}
+.list-of-user:hover{
+    background-color: #e8e8e8;
+}
+.list-of-user:hover .user-detail-wrapper {
+    visibility: visible;
+    z-index: 10;
+    display: table;
+}
+
+.user-detail-info {
+    display: block;
+    position: relative;
+    /*margin-left: -76px;*/
+    color: black;
+    background: white;
+    top: -50px;
+    left: 95%;
+    border: 1px solid black;
+    font-weight: 800;
+}
+.user-detail-info:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
 }
